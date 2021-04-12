@@ -9,11 +9,13 @@ from app.main.model import customers
 from flask_migrate import Migrate, MigrateCommand
 from flask_script import Manager
 from app.main import create_app, db
+#importing additional routes
 from app.main import routes
 app = create_app(os.getenv('BOILERPLATE_ENV') or 'dev')
 app.app_context().push()
 #Adding additional routes
 app.add_url_rule('/test', view_func=routes.test)
+app.add_url_rule('/product', view_func=routes.getProductsList)
 manager = Manager(app)
 migrate = Migrate(app, db)
 @manager.command
@@ -22,10 +24,10 @@ def run():
 
 #from app.main import create_app
 
-#app = create_app()
+#A default route here
 @app.route('/')
 def home():
-   return "Hello Calculation World!"
+   return "RetailStore API!"
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')

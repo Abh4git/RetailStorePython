@@ -15,6 +15,7 @@ class Customer(db.Model):
     address_line2 = db.Column(db.String(255), unique=True, nullable=False)
     city = db.Column(db.Integer,  nullable=False)
     country = db.Column(db.Integer,  nullable=False)
+    paymenttype_id = db.Column(db.Integer,db.ForeignKey('payment_methods.id'))
     paymenttype =  db.relationship('PaymentType', backref='Customer', lazy=True)
 
 

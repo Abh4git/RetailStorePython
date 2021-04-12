@@ -1,11 +1,12 @@
-
-#from __main__ import app
-
-from app.main.service import bp
-
-
-
-#@app.route('/test', methods=['GET', 'POST'])
-#@login_required
+#All Routes are defined here
+from app.main.controller.products import ProductController
+#Test route without any connections
 def test():
-    return "{test:'Test123'}"
+    return "{testroutesuccess:'Test Route Success!'}"
+
+
+#route returning Products list
+def getProductsList():
+    product = ProductController()
+    return product.getAllProducts()
+

@@ -2,7 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from .. import db, flask_bcrypt
 
-class PaymentMethods(db.Model):
+class PaymentType(db.Model):
     """ User Model for storing user related details """
     __tablename__ = "payment_methods"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
