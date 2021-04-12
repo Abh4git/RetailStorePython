@@ -1,12 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from .. import db, flask_bcrypt
-#app = Flask(__name__)
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/retailstoredb?user=postgres&password=adarsh12'  # 'sqlite:///'
-# 'sqlite:////tmp/test.db'
-#SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/retailstoredb?user=postgres&password=adarsh12'  # 'sqlite:///'
-
-#db = SQLAlchemy(app)
 
 class User(db.Model):
     """ User Model for storing user related details """
