@@ -16,3 +16,11 @@ class ProductController:
         for product in products:
             result.append(product.to_json())
         return jsonify({"products":result})
+
+    def getAllProductsByType(self,producttypeid):
+        products=Product.query.filter_by(producttype_id =producttypeid)
+        #return jsonify(products)
+        result = []
+        for product in products:
+            result.append(product.to_json())
+        return jsonify({"products":result})

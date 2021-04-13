@@ -16,6 +16,7 @@ app.app_context().push()
 #Adding additional routes
 app.add_url_rule('/test', view_func=routes.test)
 app.add_url_rule('/product', view_func=routes.getProductsList)
+app.add_url_rule('/product/type/<typeid>', view_func=routes.getProductsListByType)
 manager = Manager(app)
 migrate = Migrate(app, db)
 @manager.command
