@@ -15,7 +15,9 @@ class ProductController:
         result = []
         for product in products:
             result.append(product.to_json())
-        return jsonify({"products":result})
+        #products.to_collection_dict()
+        #result=json.dumps([dict(mpn=pn) for pn in products])
+        return jsonify({"products":products})
 
     def getAllProductsByType(self,producttypeid):
         products=Product.query.filter_by(producttype_id =producttypeid)

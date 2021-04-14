@@ -9,14 +9,15 @@ from app.main.model import customers
 from flask_migrate import Migrate, MigrateCommand
 from flask_script import Manager
 from app.main import create_app, db
+from flask_cors import CORS, cross_origin
 #importing additional routes
 from app.main import routes
 app = create_app(os.getenv('BOILERPLATE_ENV') or 'dev')
 app.app_context().push()
 #Adding additional routes
-app.add_url_rule('/test', view_func=routes.test)
-app.add_url_rule('/product', view_func=routes.getProductsList)
-app.add_url_rule('/product/type/<typeid>', view_func=routes.getProductsListByType)
+app.add_url_rule('/api/test', view_func=routes.test)
+app.add_url_rule('/api/product', view_func=routes.getProductsList)
+app.add_url_rule('/api/product/type/<typeid>', view_func=routes.getProductsListByType)
 manager = Manager(app)
 migrate = Migrate(app, db)
 @manager.command
