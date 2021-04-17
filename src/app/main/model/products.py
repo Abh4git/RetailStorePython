@@ -6,7 +6,7 @@ import json
 
 @dataclass
 class Product(db.Model):
-    """ User Model for storing user related details """
+    """ Product Model for storing Product related details """
     id:int
     name:str
     description:str

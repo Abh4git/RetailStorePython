@@ -14,11 +14,16 @@ api_v2_cors_config = {
 #route returning Products list
 @cross_origin(**api_v2_cors_config)
 def getProductsList():
-    product = ProductController()
-    return product.getAllProducts()
+    productC = ProductController()
+    return productC.getAllProducts()
 
 #route for products list filtered by product types
+@cross_origin(**api_v2_cors_config)
 def getProductsListByType(typeid):
-    product = ProductController()
-    return product.getAllProductsByType(typeid)
+    productC = ProductController()
+    return productC.getAllProductsByType(typeid)
 
+@cross_origin(**api_v2_cors_config)
+def getProductTypesList():
+    productC = ProductController()
+    return productC.getProductTypes()

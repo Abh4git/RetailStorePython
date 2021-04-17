@@ -16,6 +16,7 @@ app = create_app(os.getenv('BOILERPLATE_ENV') or 'dev')
 app.app_context().push()
 #Adding additional routes
 app.add_url_rule('/api/test', view_func=routes.test)
+app.add_url_rule('/api/producttypes', view_func=routes.getProductTypesList)
 app.add_url_rule('/api/product', view_func=routes.getProductsList)
 app.add_url_rule('/api/product/type/<typeid>', view_func=routes.getProductsListByType)
 manager = Manager(app)
