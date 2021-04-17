@@ -6,4 +6,4 @@
 ![Architecture Overview](https://github.com/Abh4git/RetailStorePython/blob/main/docs/Retail_Store_Online_Demo.pdf)  
 #Associated Project - Front End in React  
 https://github.com/Abh4git/RetailStoreFrontEndReact  
-![Link to Youtube Video] (https://youtu.be/QnBSJ1sU11Q)  
+![Link to Youtube Video](https://youtu.be/QnBSJ1sU11Q)  
