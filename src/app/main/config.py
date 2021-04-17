@@ -7,7 +7,7 @@ class Config:
     DEBUG = False
 class DevelopmentConfig(Config):
     # uncomment the line below to use postgres
-    SQLALCHEMY_DATABASE_URI ='postgresql://localhost/retailstoredb?user=postgres&password=adarsh12' #'sqlite:///'
+    SQLALCHEMY_DATABASE_URI ='postgresql://localhost/retailstoredb?user=postgres&password=test' #'sqlite:///'
     SQLALCHEMY_TRACK_MODIFICATIONS = True
 
 class TestingConfig(Config):
