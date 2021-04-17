@@ -1,2 +1,2 @@
 # RetailStorePython
- RetailStore Example in Python, Flask
+ RetailStore RESTful Services Example in Python, Flask, SQLAlchemy, PostgreSQL
