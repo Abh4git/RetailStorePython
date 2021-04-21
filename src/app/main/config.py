@@ -3,11 +3,11 @@ import os
 # postgres_local_base = os.environ['DATABASE_URL']
 basedir = os.path.abspath(os.path.dirname(__file__))
 class Config:
-    SECRET_KEY = os.getenv('SECRET_KEY', 'my_precious_secret_key')
+    SECRET_KEY = os.getenv('SECRET_KEY', 'MY_SECRET_KEY')
     DEBUG = False
 class DevelopmentConfig(Config):
     # uncomment the line below to use postgres
-    SQLALCHEMY_DATABASE_URI ='postgresql://localhost/retailstoredb?user=postgres&password=test' #'sqlite:///'
+    SQLALCHEMY_DATABASE_URI ='postgresql://localhost/retailstoredb?user=postgres&password=adarsh12' #'sqlite:///'
     SQLALCHEMY_TRACK_MODIFICATIONS = True
 
 class TestingConfig(Config):

@@ -1,9 +1,15 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from .. import db, flask_bcrypt
+from dataclasses import dataclass
 
+@dataclass()
 class User(db.Model):
     """ User Model for storing user related details """
+    id: int
+    email:str
+    username:str
+
     __tablename__ = "user"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     email = db.Column(db.String(255), unique=True, nullable=False)
@@ -11,15 +17,16 @@ class User(db.Model):
     admin = db.Column(db.Boolean, nullable=False, default=False)
     public_id = db.Column(db.String(100), unique=True)
     username = db.Column(db.String(50), unique=True)
-    password_hash = db.Column(db.String(100))
+    password_hash = db.Column(db.String(255))
     @property
     def password(self):
         raise AttributeError('password: write-only field')
     @password.setter
     def password(self, password):
-        self.password_hash = flask_bcrypt.generate_password_hash(password)
+        pwhash = flask_bcrypt.generate_password_hash(password).decode('utf-8')
+        self.password_hash = pwhash
 
-def check_password(self, password):
-    return flask_bcrypt.check_password_hash(self.password_hash,password)
+    def check_password(self, password):
+        return flask_bcrypt.check_password_hash(self.password_hash,password)
 def __repr__(self):
     return "<User '{}'>".format(self.username)
