@@ -10,6 +10,7 @@ class Product(db.Model):
     id:int
     name:str
     description:str
+    imagename:str
 
     __tablename__ = "products"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -17,7 +18,7 @@ class Product(db.Model):
     description = db.Column(db.String(255), unique=True, nullable=False)
     producttype_id = db.Column(db.Integer, db.ForeignKey('product_types.id'))
     producttype =  db.relationship('ProductType', backref='Product', lazy=True)
-
+    imagename = db.Column(db.String(255), unique=True, nullable=True)
 
     def __repr__(self):
         return "<Product '{}'>".format(self.name)
