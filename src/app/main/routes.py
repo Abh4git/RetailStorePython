@@ -62,3 +62,12 @@ def addUser():
     userController.addUser(username=userinfo['username'], password=userinfo['password'], email=userinfo['email'])
     return {"Success":"1"}
 
+@cross_origin(**api_v2_cors_config)
+def addProduct():
+    productController = ProductController()
+    print(request.is_json)
+    productinfo =request.get_json()
+    print(productinfo)
+    response=productController.addProduct(id=productinfo['id'], name=productinfo['name'], description=productinfo['description']
+                                          , producttype_id=productinfo['producttype_id'], imagename=productinfo['imagename'])
+    return response

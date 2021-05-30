@@ -27,6 +27,7 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 app.add_url_rule('/api/test', view_func=routes.test)
 app.add_url_rule('/api/producttypes', view_func=routes.getProductTypesList)
 app.add_url_rule('/api/product', view_func=routes.getProductsList)
+app.add_url_rule('/api/product', view_func=routes.addProduct,methods=['POST'])
 app.add_url_rule('/api/product/type/<typeid>', view_func=routes.getProductsListByType)
 app.add_url_rule('/api/user', view_func=routes.addUser,methods=['POST'])
 app.add_url_rule('/api/auth', view_func=routes.login,methods=['POST'])
